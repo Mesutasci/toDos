@@ -45,6 +45,7 @@ h1, h2{
   font-weight: bolder;
   margin: 0px;
 }
+
 hr {
   border: 1px solid rgb(39,129,184);
   width: 100%;
@@ -72,13 +73,14 @@ input:focus {
   max-width: 400px;
   text-align: center;
 }
+
 input[type="date"] {
   border: none;
   background:rgb(218, 225, 229);
   color: grey !important;
   font-weight: bold;
   max-width: 130px;
-  text-align: center;
+  /* text-align: right; */
   background:rgb(218, 225, 229);
 }
 button {
@@ -93,7 +95,6 @@ button {
 .col-num, .col-todo, .delete {
   color: rgb(39,129,184);  
   font-size: larger;
-
 }
 
 .col-num {
@@ -101,7 +102,11 @@ button {
 }
 
 .col-todo{
-  width: max-content;
+  width: 55%;
+}
+.col-date {
+  width: 25%;
+  text-align: right;
 }
 
 .delete {

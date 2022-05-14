@@ -1,11 +1,32 @@
-const listContainer = document.querySelector(".list");
-let todoName = document.querySelector("#todo-name");
+const todoName = document.querySelector("#todo-name");
 const todoDate = document.querySelector("#todo-date");
-const table = document.querySelector(".table");
-const tHead = document.querySelector(".table-head");
-const submitButton = document.querySelector(".submit");
+let table = document.querySelector(".table");
+let tBody = document.querySelector(".table-body");
 
-let todoList = [];
+function formRows(pList) {
+    return tBody.innerHTML = pList
+        .map((todo, index) => {
+            return `
+            <tr>
+                <th scope="row" class="col-num">${index + 1}</th>
+                <td class="col-todo">${todo.nameTodo}</td>
+                <td class="col-date">${todo.dateTodo}</td>
+                <td class="delete"><i class="fa-solid fa-trash-can"></i></td>
+            </tr>
+            `
+        }
+
+        ).join("")
+}
+
+// Add new todos to the to the list
+let todoList = [
+];
+
+// if (todoList.length !== 0) {
+//     table.innerHTML = `
+//     <h2>...Your ToDo list is empty....</>`
+// }
 
 const addTodo = function () {
     const nameTodo = todoName.value.trim(); // moving white spaces
@@ -16,24 +37,25 @@ const addTodo = function () {
     }
     if (nameTodo !== "" && dateTodo !== "") {
         todoList.push(newTodo); // preventing to input empty values
-        // todoName.reset();
+
+        // todoName.reset(); FIND THE SOLUTION!!!!!!!!!!!!
     }
-    // ADD SWEET ALERT IF THE INPUT FIELDS ARE EMPTY
-    console.log(todoList)
+    formRows(todoList);
 }
 
-// const tableRows = todoList.map((todo, index) =>
-//     `
-//     <tr>
-//         <th scope="row" class="col-num">${index + 1}</th>
-//         <td class="col-todo">${todo.name}</td>
-//         <td class="third-column">${todo.date}</td>
-//         <td class="delete"><i class="fa-solid fa-trash-can"></i></td>
-//     </tr>
-// `
-// ).join("")
 
 
+
+// formRows(todoList);
+
+// // Adding rows to the table
+// function addRows(Array) {
+//     let owlCarousel = document.querySelector('.owl-carousel');
+//     owlCarousel.innerHTML = addCards(Array);
+//     return owlCarousel;
+// }
+
+// render(todoList);
 
 
 
@@ -126,4 +148,3 @@ const addTodo = function () {
 //         alert("Please type in the box something to do");
 //     }
 // }
-
