@@ -59,14 +59,27 @@ img {
   margin: 50px 0px;
 }
 
-input[type="text"],
+input {
+  display: inline-block;
+  margin: 0 1%;
+}
+input[type="text"], 
 input:focus {
-  color: rgb(249, 248, 246);
   border: none;
   background:rgb(218, 225, 229);
+  color: grey;
   font-weight: bold;
   max-width: 400px;
   text-align: center;
+}
+input[type="date"] {
+  border: none;
+  background:rgb(218, 225, 229);
+  color: grey !important;
+  font-weight: bold;
+  max-width: 130px;
+  text-align: center;
+  background:rgb(218, 225, 229);
 }
 button {
   background-color: rgb(39,129,184);  
@@ -74,7 +87,6 @@ button {
   border-radius: 5px;
   color:rgb(218, 225, 229);
   font-weight: bolder;
-  margin-left: 1%;
   width: 100px;
 }
 

@@ -1,47 +1,37 @@
 const listContainer = document.querySelector(".list");
-const inputForm = document.querySelector("#add-todo");
+let todoName = document.querySelector("#todo-name");
+const todoDate = document.querySelector("#todo-date");
 const table = document.querySelector(".table");
 const tHead = document.querySelector(".table-head");
-const tBody = document.querySelector(".table-body");
 const submitButton = document.querySelector(".submit");
 
 let todoList = [];
 
 const addTodo = function () {
-    const newValue = inputForm.value.trim(); // moving white spaces
-    if (newValue !== "") {
-        todoList.push(newValue); // preventing to input empty values
+    const nameTodo = todoName.value.trim(); // moving white spaces
+    const dateTodo = todoDate.value; // moving white spaces
+    const newTodo = {
+        nameTodo: nameTodo,
+        dateTodo: dateTodo
     }
+    if (nameTodo !== "" && dateTodo !== "") {
+        todoList.push(newTodo); // preventing to input empty values
+        // todoName.reset();
+    }
+    // ADD SWEET ALERT IF THE INPUT FIELDS ARE EMPTY
     console.log(todoList)
 }
 
-const addTBody = function (pList) {
-    tBody.innerHTML += pList.map(todo => {
-        return `
-  <tr>
-    <th scope="row" class="col-num">1</th>
-    <td class="col-todo">${todo}</td>
-    <!-- <td class="third-column">Otto</td> -->
-    <td class="delete"><i class="fa-solid fa-trash-can"></i></td>
-  </tr>
-  `;
-    })
-}
-
-console.log(addTBody(todoList));
-
-
-
-
-// function addTemplate() {
-//   return table.innerHTML = `
-//   ${addThead()}
-//   ${addTBody()}
-//   `
-// }
-
-
-
+// const tableRows = todoList.map((todo, index) =>
+//     `
+//     <tr>
+//         <th scope="row" class="col-num">${index + 1}</th>
+//         <td class="col-todo">${todo.name}</td>
+//         <td class="third-column">${todo.date}</td>
+//         <td class="delete"><i class="fa-solid fa-trash-can"></i></td>
+//     </tr>
+// `
+// ).join("")
 
 
 

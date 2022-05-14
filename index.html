@@ -30,17 +30,17 @@
         <hr>
         <section class="container list">
             <div class="add-todo d-flex justify-center">
-                <input class="form-control m-auto" type="text" value="" name="add-todo" id="add-todo"
+                <input class="form-control m-auto" type="text" value="" name="todo-name" id="todo-name"
                     placeholder="... add a new todo" />
+                <input type="date" class="form-control" name="todo-date" id="todo-date" required>
                 <button onclick="addTodo()" type="submit">Add</button>
-
             </div>
             <table class="table">
                 <thead class="table-head">
                     <tr>
                         <th scope="col" class="col-num"></th>
                         <th scope="col" class="col-todo">ToDo List</th>
-                        <!-- <th scope="col" class="third-column">Deadline</th> -->
+                        <th scope="col" class="third-column">Deadline</th>
                         <th class="fourth-column delete" scope="col">Delete</th>
                     </tr>
                 </thead>
