@@ -68,6 +68,15 @@ input:focus {
   max-width: 400px;
   text-align: center;
 }
+button {
+  background-color: rgb(39,129,184);  
+  border: none;  
+  border-radius: 5px;
+  color:rgb(218, 225, 229);
+  font-weight: bolder;
+  margin-left: 1%;
+  width: 100px;
+}
 
 .col-num, .col-todo, .delete {
   color: rgb(39,129,184);  

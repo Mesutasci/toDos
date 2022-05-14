@@ -28,14 +28,15 @@
             </div>
         </header>
         <hr>
-        <section class="container">
-            <!-- <h2>Current ToDo's </h2> -->
-            <form class="add-todo">
+        <section class="container list">
+            <form class="add-todo d-flex justify-center">
                 <input class="form-control m-auto" type="text" name="add-todo" id="add-todo"
                     placeholder="... add a new todo" />
+                <button>Add</button>
+
             </form>
             <table class="table">
-                <thead>
+                <thead class="table-head">
                     <tr>
                         <th scope="col" class="col-num"></th>
                         <th scope="col" class="col-todo">ToDo List</th>
@@ -66,6 +67,8 @@
             </table>
         </section>
     </main>
+
+    <script src="./todo.js"></script>
 </body>
 
 </html>
