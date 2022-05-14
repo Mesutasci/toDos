@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Handlee&family=Ms+Madi&family=Raleway:ital,wght@0,300;0,400;0,500;1,200&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -9,45 +11,79 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
 }
 
 main {
-
+  margin: 3%;
+  padding: 2%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 5px;
+  width: 600px;
+  background-color: rgb(249, 242, 234);
+  -webkit-box-shadow: 1px 1px 23px 2px rgba(0,0,0,0.3);
+-moz-box-shadow: 1px 1px 23px 2px rgba(0,0,0,0.3);
+box-shadow: 1px 1px 23px 2px rgba(0,0,0,0.3);
+font-family: Handlee;
 }
 
-.container {
-  max-width: 400px;
+main .container {
+  margin: 3%;
+
+  /* width: 94%; */
+  border: 1px solid red;
 }
 
+#card-title {
+  display: flex;
+  align-items: center;
+}
+
+h1{
+  margin: 0px;
+  font-weight: bolder;
+  color: rgb(39,129,184);
+}
+
+img {
+    width: 50px;
+    border-radius: 5px;
+    font-weight: bolder;
+  }
 span {
   display: inline-block;
   width: 50px;
 }
 
-span img {
-  width: 50px;
-  border-radius: 50%;
+.search {
+  margin: 50px 0px;
 }
+
+
+
 
 input[type="text"],
 input:focus {
   color: #fff;
   border: none;
-  background: rgba(0, 0, 0, 0.2);
+  background:rgb(166, 195, 212);
   max-width: 400px;
+text-align: center;
+font-weight: bold;
 }
 
 .todos li {
-  background: #423a6f;
+  background: rgb(39,129,184);
 }
-
 .delete {
   cursor: pointer;
 }
 
 button {
-  background: #423a6f;
+  background: rgb(39,129,184);
   margin: 5px;
 }
-
-/*# sourceMappingURL=style.css.map */

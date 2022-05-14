@@ -13,23 +13,55 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
         integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous" />
 
+
     <link rel="stylesheet" href="./style.css" />
     <title>MY TODO LIST</title>
 </head>
 
 <body>
     <main>
-        <header class="container py-5">
-            <div class="d-flex justify-content-between">
-                <h1 class="mb-4">Todo List</h1>
+        <header class="container">
+            <div class="d-flex justify-content-between" id="card-title">
+                <h1>TODO's</h1>
                 <span><img src="./IMG_0110.jpg" alt="My Profile Picture"></span>
             </div>
             <form class="search">
                 <input class="form-control m-auto" type="text" name="search" id="search" placeholder="search todos" />
             </form>
-
         </header>
-        <section></section>
+        <hr>
+        <section class="container">
+            <h2>Current ToDo's List</h2>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">First</th>
+                        <th scope="col">Last</th>
+                        <th scope="col">Handle</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>Jacob</td>
+                        <td>Thornton</td>
+                        <td>@fat</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td colspan="2">Larry the Bird</td>
+                        <td>@twitter</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
     </main>
 </body>
 
