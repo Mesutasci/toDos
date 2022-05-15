@@ -51,10 +51,10 @@ hr {
   width: 100%;
 }
 img {
-  border: 1px solid rgb(39,129,184);
+  /* border: 1px solid rgb(39,129,184); */
   border-radius: 5px;
   font-weight: bolder;    
-  width: 50px;
+  width: 60px;
 }
 
 .add-todo {
@@ -100,8 +100,7 @@ button:hover {
   color: rgb(39,129,184);
 }
 
-.col-num, .col-todo, .delete {
-  color: rgb(39,129,184);  
+.col-num, .col-todo, .col-date .delete {
   font-size: larger;
 }
 
@@ -115,13 +114,16 @@ button:hover {
 
 .col-date {
   width: 25%;
-  text-align: right;
+  text-align: center;
 }
 
 .delete {
-  color: rgb(39,129,184);
   cursor: pointer;
-  text-align: right;  
+  text-align: center;  
   width: 12%;
+}
+.table-head{
+  color: rgb(39,129,184);
+  font-size: larger;
 }
 
