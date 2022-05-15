@@ -7,7 +7,7 @@
 
 body {
   align-items: flex-start;
-  background-image: url(./8326556.jpg);
+  background-image: url(./background.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
@@ -51,6 +51,7 @@ hr {
   width: 100%;
 }
 img {
+  border: 1px solid rgb(39,129,184);
   border-radius: 5px;
   font-weight: bolder;    
   width: 50px;
@@ -64,6 +65,7 @@ input {
   display: inline-block;
   margin: 0 1%;
 }
+
 input[type="text"], 
 input:focus {
   border: none;
@@ -80,9 +82,9 @@ input[type="date"] {
   color: grey !important;
   font-weight: bold;
   max-width: 130px;
-  /* text-align: right; */
   background:rgb(218, 225, 229);
 }
+
 button {
   background-color: rgb(39,129,184);  
   border: none;  
@@ -90,6 +92,12 @@ button {
   color:rgb(218, 225, 229);
   font-weight: bolder;
   width: 100px;
+}
+
+button:hover {
+  background-color: rgb(218, 225, 229);
+  border: 2px solid rgb(39,129,184);
+  color: rgb(39,129,184);
 }
 
 .col-num, .col-todo, .delete {
@@ -104,6 +112,7 @@ button {
 .col-todo{
   width: 55%;
 }
+
 .col-date {
   width: 25%;
   text-align: right;
