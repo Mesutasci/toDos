@@ -2,6 +2,7 @@ const todoName = document.querySelector("#todo-name");
 const todoDate = document.querySelector("#todo-date");
 let table = document.querySelector(".table");
 let tBody = document.querySelector(".table-body");
+// const button = document.querySelector(".button");
 
 // Data structure
 let todoList = [
@@ -20,8 +21,7 @@ function formRows(pList) {
             </tr>
             `
         }
-
-        ).join("")
+        ).join("") // to remove commas between array elements
 }
 
 // Adding a todo to the list
@@ -35,10 +35,11 @@ const addTodo = function () {
     }
     if (nameTodo !== "" && dateTodo !== "") {
         todoList.push(newTodo); // preventing to input empty values
-
-        // todoName.reset(); FIND THE SOLUTION!!!!!!!!!!!!
     }
     formRows(todoList);
+    // clearing input values
+    todoName.value = "";
+    todoDate.value = "";
 }
 
 // Removing ToDos from the list
