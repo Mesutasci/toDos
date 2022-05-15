@@ -51,7 +51,6 @@ const addTodo = function () {
             'question'
         )
     }
-
     formRows(todoList);
 
     // clearing input values
