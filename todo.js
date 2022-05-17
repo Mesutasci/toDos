@@ -27,7 +27,7 @@ function formRows(pList) {
 // Adding a todo to the list
 const addTodo = function () {
     const nameTodo = todoName.value.trim(); // moving white spaces
-    const dateTodo = todoDate.value; // moving white spaces
+    const dateTodo = todoDate.value; // changing string to date object
     const newTodo = {
         // id: todoList.length, // id of the each list objects
         nameTodo: nameTodo,
@@ -46,13 +46,13 @@ const addTodo = function () {
     else {
         // alert("Please do not forget to enter a todo or the deadline!")
         Swal.fire(
-            'Alls filled?',
-            'Please do\'nt forget to enter a TODO and a DEADLINE!',
+            'All fields filled?',
+            'Please enter both a TODO and a DEADLINE!',
             'question'
         )
     }
     formRows(todoList);
-
+    todoList.sort((a, b) => (a.nameTodo > b.nameTodo) ? 1 : ((b.nameTodo > a.nameTodo) ? -1 : 0))
     // clearing input values
     todoName.value = "";
     todoDate.value = "";
@@ -82,3 +82,24 @@ function deleteTodo(index) {
         }
     })
 }
+
+// sort todos by string expression
+function sortByToDo() {
+    todoList
+        .sort((a, b) => (a.nameTodo > b.nameTodo) ? 1 : ((b.nameTodo > a.nameTodo) ? -1 : 0));
+    formRows(todoList);
+}
+
+/* sort function todos in reverse order
+ function sortTodosReverse(tList) {
+    tList
+    .sort((a, b) => (b.nameTodo > a.nameTodo) ? 1 : ((a.nameTodo > b.nameTodo) ? -1 : 0))
+}*/
+
+
+// sort todos by date
+function sortByDate() {
+    todoList.sort((a, b) => new Date(a.dateTodo) - new Date(b.dateTodo));
+    formRows(todoList);
+}
+

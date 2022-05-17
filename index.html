@@ -39,10 +39,19 @@
                     <tr>
                         <th scope="col" class="col-num"></th>
                         <th scope="col" class="col-todo">ToDos
-                            <!-- <span class="sort"><i class="fa-solid fa-sort-down" onclick="sortByName()"></i></span> -->
+                            <span class="sort" id="sort-name">
+                                <i class="fa-solid fa-sort-down" onclick="sortByToDo()">
+                                </i>
+                            </span>
+                            <!-- <span class="sort" id="sort-reverse">
+                                <i class="fa-solid fa-sort-up"
+                                    onclick="sortByNameReverse()">
+                                </i>
+                            </span> -->
                         </th>
                         <th scope="col" class="col-date">Deadline
-                            <!-- <span class="sort"><i class="fa-solid fa-sort-down" onclick="sortByDate()"></i></span> -->
+                            <span class="sort" id="sort-date"><i class="fa-solid fa-sort-down"
+                                    onclick="sortByDate()"></i></span>
                         </th>
                         <th class="" scope="col">Delete</th>
                     </tr>

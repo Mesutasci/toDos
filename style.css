@@ -68,36 +68,36 @@ input {
 
 input[type="text"], 
 input:focus {
-  border: none;
-  background:rgb(218, 225, 229);
-  color: grey;
+  border: 1px solid rgb(39,129,184);
+  background: rgb(218, 237, 249);
+  color: rgb(40,128,185) !important;
   font-weight: bold;
   max-width: 400px;
   text-align: center;
 }
 
 input[type="date"] {
-  border: none;
-  background:rgb(218, 225, 229);
-  color: grey !important;
+  border: 1px solid rgb(39,129,184);
+  background:rgb(218, 237, 249);
+  color: rgb(40,128,185);
   font-weight: bold;
   max-width: 130px;
-  background:rgb(218, 225, 229);
+
 }
 
 button {
   background-color: rgb(39,129,184);  
   border: none;  
   border-radius: 5px;
-  color:rgb(218, 225, 229);
+  color:rgb(210, 236, 252);
   font-weight: bolder;
   width: 100px;
 }
 
 button:hover {
-  background-color: rgb(218, 225, 229);
-  border: 2px solid rgb(39,129,184);
-  color: rgb(39,129,184);
+  background: rgb(210, 236, 252);
+  border: 2px solid rgb(46,141,205);
+  color: rgb(46,141,205);
 }
 
 .col-num, .col-todo, .col-date .delete {
@@ -118,7 +118,6 @@ button:hover {
 }
 
 .delete {
-  cursor: pointer;
   text-align: center;  
   width: 12%;
 }
@@ -127,8 +126,8 @@ button:hover {
   font-size: larger;
 }
 
-.fa-sort-down:before {
-  display: inline-flex;
+/* Font size of the arrows */
+.fa-solid, .fas {
+  font-size: 22px;  
   cursor: pointer;
-
 }
