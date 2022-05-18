@@ -5,8 +5,10 @@ let tBody = document.querySelector(".table-body");
 // const button = document.querySelector(".button");
 
 // Data structure
-let todoList = [
-];
+let todoList = []; // Starting with an empty array
+localStorage.setItem('todos', JSON.stringify(todoList)); // sending the array to the local storage
+let storedTodos = localStorage.getItem('todos');
+todoList = JSON.parse(storedTodos);
 
 // Forming table rows
 function formRows(pList) {
@@ -24,17 +26,24 @@ function formRows(pList) {
         ).join("") // to remove commas between array elements
 }
 
+
 // Adding a todo to the list
 const addTodo = function () {
     const nameTodo = todoName.value.trim(); // moving white spaces
     const dateTodo = todoDate.value; // changing string to date object
     const newTodo = {
-        // id: todoList.length, // id of the each list objects
         nameTodo: nameTodo,
         dateTodo: dateTodo
     }
     if (nameTodo !== "" && dateTodo !== "") {
-        todoList.push(newTodo); // preventing to input empty values
+        // getting the list from the local storage
+        let storedTodos = localStorage.getItem('todos');
+        todoList = JSON.parse(storedTodos);
+
+        todoList.push(newTodo); // adding new ToDo to the list
+
+        localStorage.setItem('todos', JSON.stringify(todoList)); // sending new ToDo list back to the local storage
+
         Swal.fire({
             position: 'top-end',
             icon: 'success',
@@ -52,11 +61,14 @@ const addTodo = function () {
         )
     }
     formRows(todoList);
-    todoList.sort((a, b) => (a.nameTodo > b.nameTodo) ? 1 : ((b.nameTodo > a.nameTodo) ? -1 : 0))
     // clearing input values
     todoName.value = "";
     todoDate.value = "";
+
+    console.log(todoList)
+
 }
+
 
 // Removing ToDos from the list
 function deleteTodo(index) {
@@ -71,9 +83,20 @@ function deleteTodo(index) {
         confirmButtonText: 'Yes!'
     }).then((result) => {
         if (result.isConfirmed) {
-            let filteredList = todoList.filter((todo, index) => todoList.indexOf(todo) !== selectedId);
-            todoList = filteredList;
+            // getting the list from the local storage
+            let storedTodos = localStorage.getItem('todos');
+            todoList = JSON.parse(storedTodos);
+
+            // deleting clicked item
+            let removedList = todoList.filter(todo => todoList.indexOf(todo) !== selectedId);
+            todoList = removedList;
+
+            // sending new ToDo list back to the local storage
+            localStorage.setItem('todos', JSON.stringify(todoList));
+
             formRows(todoList)
+            console.log(todoList)
+
             Swal.fire(
                 'Deleted!',
                 'Your ToDo has been deleted.',
@@ -81,25 +104,44 @@ function deleteTodo(index) {
             )
         }
     })
+
 }
 
-// sort todos by string expression
+
+// Sorting ToDos by string expression
 function sortByToDo() {
+    // getting the list from the local storage
+    let storedTodos = localStorage.getItem('todos');
+    todoList = JSON.parse(storedTodos);
+
+    // sorting the ToDo list by name
     todoList
         .sort((a, b) => (a.nameTodo > b.nameTodo) ? 1 : ((b.nameTodo > a.nameTodo) ? -1 : 0));
+
+    // sending new ToDo list back to the local storage
+    localStorage.setItem('todos', JSON.stringify(todoList));
+
+    // Rendering the sorted list
     formRows(todoList);
+    console.log(todoList)
 }
-
-/* sort function todos in reverse order
- function sortTodosReverse(tList) {
-    tList
-    .sort((a, b) => (b.nameTodo > a.nameTodo) ? 1 : ((a.nameTodo > b.nameTodo) ? -1 : 0))
-}*/
-
 
 // sort todos by date
 function sortByDate() {
-    todoList.sort((a, b) => new Date(a.dateTodo) - new Date(b.dateTodo));
+    // getting the list from the local storage
+    let storedTodos = localStorage.getItem('todos');
+    todoList = JSON.parse(storedTodos);
+
+    // sorting the ToDo list by date
+    todoList
+        .sort((a, b) => new Date(a.dateTodo) - new Date(b.dateTodo));
+
+    // sending new ToDo list back to the local storage
+    localStorage.setItem('todos', JSON.stringify(todoList));
+
+    // Rendering the sorted list
     formRows(todoList);
+    console.log(todoList)
 }
+
 

@@ -100,7 +100,7 @@ button:hover {
   color: rgb(46,141,205);
 }
 
-.col-num, .col-todo, .col-date .delete {
+.col-num, .col-todo, .col-date {
   font-size: larger;
 }
 
